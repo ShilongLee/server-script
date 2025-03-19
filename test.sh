@@ -30,7 +30,7 @@ echo "第一步：检查和安装 Docker"
 echo "========================================"
 
 # 检查 Docker 是否已安装
-if command -v docker &>/dev/null; then
+if command -v docker >/dev/null 2>&1; then
     echo "√ Docker 已安装，版本信息："
     docker --version
     echo "跳过 Docker 安装步骤..."
@@ -87,7 +87,7 @@ echo "第二步：检查和安装 Git"
 echo "========================================"
 
 # 检查 Git 是否已安装
-if command -v git &>/dev/null; then
+if command -v git >/dev/null 2>&1; then
     echo "√ Git 已安装，版本信息："
     git --version
     echo "跳过 Git 安装步骤..."
