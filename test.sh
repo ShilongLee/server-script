@@ -2,7 +2,7 @@
  # @Author: lishilong
  # @Date: 2025-03-14 10:33:20
  # @LastEditors: lishilong
- # @LastEditTime: 2025-03-14 18:51:28
+ # @LastEditTime: 2025-03-19 23:17:03
  # @Desc: 本地启动服务器
 ### 
 #!/bin/bash
@@ -143,9 +143,9 @@ if [ ! -d "slg_compose" ]; then
         echo "√ 项目下载成功！"
         # 切换到指定分支
         cd slg_compose
-        git checkout $new_branch
+        git checkout master
         cd ..
-        echo "√ 已切换到 $new_branch 分支"
+        echo "√ 已切换到 master 分支"
     else
         echo "× 项目下载失败，请检查上述错误信息。"
         exit 1
@@ -161,10 +161,10 @@ else
     
     # 切换到指定分支并拉取最新代码
     git fetch --all
-    git checkout $new_branch
+    git checkout master
     git pull --force
     
-    echo "√ 已切换到 $new_branch 分支并更新到最新代码"
+    echo "√ 已切换到 master 分支并更新到最新代码"
     
     # 返回原目录
     cd ..
