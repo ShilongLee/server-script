@@ -2,7 +2,7 @@
  # @Author: lishilong
  # @Date: 2025-03-14 10:33:20
  # @LastEditors: lishilong
- # @LastEditTime: 2025-03-20 15:24:26
+ # @LastEditTime: 2025-03-20 17:06:51
  # @Desc: 本地启动服务器
 ### 
 #!/bin/bash
@@ -188,15 +188,15 @@ if [ ! -f "$ENV_FILE" ]; then
 fi
 
 # 替换SERVER_BRANCH值
-sed -i "s/^SERVER_BRANCH=.*$/SERVER_BRANCH=\"$new_branch\"/" "$ENV_FILE"
+sed -i "s|^SERVER_BRANCH=.*$|SERVER_BRANCH=\"$new_branch\"|" "$ENV_FILE"
 
 # 取消LOCAL_HOST的注释并替换值
 if grep -q "^LOCAL_HOST=" "$ENV_FILE"; then
     # 如果LOCAL_HOST已经取消注释，直接替换值
-    sed -i "s/^LOCAL_HOST=.*$/LOCAL_HOST=\"$local_ip\"/" "$ENV_FILE"
+    sed -i "s|^LOCAL_HOST=.*$|LOCAL_HOST=\"$local_ip\"|" "$ENV_FILE"
 elif grep -q "^# LOCAL_HOST=" "$ENV_FILE"; then
     # 如果LOCAL_HOST被注释，取消注释并替换值
-    sed -i "s/^# LOCAL_HOST=.*$/LOCAL_HOST=\"$local_ip\"/" "$ENV_FILE"
+    sed -i "s|^# LOCAL_HOST=.*$|LOCAL_HOST=\"$local_ip\"|" "$ENV_FILE"
 else
     # 如果LOCAL_HOST不存在，添加它
     echo "LOCAL_HOST=\"$local_ip\"" >> "$ENV_FILE"
