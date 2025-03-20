@@ -2,7 +2,7 @@
  # @Author: lishilong
  # @Date: 2025-03-14 10:33:20
  # @LastEditors: lishilong
- # @LastEditTime: 2025-03-20 15:07:55
+ # @LastEditTime: 2025-03-20 15:24:26
  # @Desc: 本地启动服务器
 ### 
 #!/bin/bash
@@ -265,7 +265,7 @@ echo "========================================"
 cd slg_compose/docker
 
 echo "登录Docker仓库..."
-if docker login https://harbor.ops.tuyoops.com -u 'robot$sanguoxj-187+sanguoxj-read' --password 'zs11x7CZA8agULeiaz5r8I7zvYg051hF'; then
+if docker login harbor.ops.tuyoops.com -u 'robot$sanguoxj-187+sanguoxj-read' --password 'zs11x7CZA8agULeiaz5r8I7zvYgO51hF'; then
     echo "√ Docker仓库登录成功"
 else
     echo "× Docker仓库登录失败，请检查凭据"
